@@ -15,9 +15,12 @@ defmacro:=-D
 
 VERILOG_FILES+=$(wildcard rtl/*.v)
 VERILOG_FILES+=$(wildcard simulation/*.v)
+# VERILOG_FILES+=$(wildcard lib/hardware/*.v)
 
 VERILOG_INCLUDE = \
-	# -I include
+	-I include \
+	# -I lib/include
+	
 all: test_vcd
 
 build: testbench.vvp
